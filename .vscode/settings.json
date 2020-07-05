@@ -1,0 +1,9 @@
+{
+  "git.ignoreLimitWarning": true,
+  "solargraph.commandPath": "/Users/cs/.rbenv/shims/solargraph",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.useLanguageServer": true,
+  "solargraph.useBundler": true,
+  "solargraph.definitions": true,
+  "solargraph.diagnostics": true
+}
