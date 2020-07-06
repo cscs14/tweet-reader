@@ -1,0 +1,32 @@
+name: Ruby-Deploy-to-Production
+
+on:
+  release:
+    types: [published]
+  repository_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@master
+      with:
+        ref: master
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.6
+    - name: Install SSH key
+      uses: webfactory/ssh-agent@v0.2.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Install Libmysqlclient-dev
+      run: |
+        sudo apt-get install libmysqlclient-dev
+    - name: Bundle install
+      run: |
+        bundle install
+    - name: Deploy Production
+      run: |
+        bundle exec cap production deploy
