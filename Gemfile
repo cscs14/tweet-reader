@@ -52,6 +52,8 @@ group :development do
   # Check coding rules
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
+  # Manage environment variables
+  gem 'dotenv-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
