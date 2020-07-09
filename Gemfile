@@ -37,7 +37,17 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  # Test framework
   gem 'rspec-rails'
+  # Makes it easy to create test data used in Rspec.
+  gem 'factory_bot_rails'
+  # Generate dermy data
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  # Clean up the database.
+  gem 'database_cleaner-active_record'
+  gem 'database_cleaner-redis'
 end
 
 group :development do
@@ -52,15 +62,16 @@ group :development do
   # Check coding rules
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
+  gem 'gry'
   # Manage environment variables
   gem 'dotenv-rails'
 end
 
 group :production do
+  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+  gem 'tzinfo-data'
+  # Running Rails application on Heroku
   gem 'rails_12factor'
-  gem 'dotenv-rails'
+  # Authentication tools
   gem 'omniauth-twitter'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data'
