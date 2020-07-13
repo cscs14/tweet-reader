@@ -108,4 +108,5 @@ group :production do
   gem 'rails_12factor'
   # Authentication tools
   gem 'omniauth-twitter'
+  gem 'omniauth-rails_csrf_protection'
 end
