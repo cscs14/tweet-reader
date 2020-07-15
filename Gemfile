@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml-rails'
 gem 'jquery-rails'
 
+gem 'rack-cors'
+
 # group :test do
 #   gem 'capybara'
 #   gem 'selenium-webdriver'
