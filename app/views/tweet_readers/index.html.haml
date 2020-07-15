@@ -1,6 +1,6 @@
 .login-main
   .login-main__container
-    -# = link_to user_twitter_omniauth_authorize_path, method: :post do
+    = link_to user_twitter_omniauth_path, method: :post do
       .login-main__btn-sns--twitter
         -# =icon('fab', 'twitter',class:"icon--twitter")
         %p Twitterアカウントでログイン

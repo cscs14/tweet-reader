@@ -80,6 +80,10 @@ group :development do
   gem 'rubocop-rails', require: false
   # Manage environment variables
   gem 'dotenv-rails'
+  # Authentication tools
+  gem 'twurl'
+  gem 'devise_token_auth'
+  gem 'omniauth-twitter'
   # ERD creation
   # gem 'rails-erd'
   # N+1 detection
@@ -102,11 +106,9 @@ end
 # end
 
 group :production do
-  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-  gem 'tzinfo-data'
   # Running Rails application on Heroku
   gem 'rails_12factor'
-  # Authentication tools
-  gem 'omniauth-twitter'
-  gem 'omniauth-rails_csrf_protection'
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data'

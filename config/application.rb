@@ -32,6 +32,22 @@ module TweetReader
     config.time_zone = 'Tokyo'
     config.generators.javascript_engine = :js
 
+    # Session and Cookie setthing
+    config.session_store :cookie_store, key: '_session_mechaco'
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore, config.session
+
+    # CORS setting
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*',
+        headers: :any,
+          expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+          methods: [:get, :post, :options, :delete, :put]
+      end
+    end
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
