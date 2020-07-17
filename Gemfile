@@ -80,7 +80,6 @@ group :development do
   gem 'rubocop-rails', require: false
   # Manage environment variables
   gem 'dotenv-rails'
-  gem 'omniauth-twitter'
   # ERD creation
   # gem 'rails-erd'
   # N+1 detection
@@ -110,6 +109,7 @@ end
 group :development, :production, :test do
   # Authentication tools
   gem 'devise'
+  gem 'omniauth-twitter'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
