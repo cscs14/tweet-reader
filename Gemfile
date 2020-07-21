@@ -11,35 +11,23 @@ gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sassc-rails'
+# Use JQuery for javascripts
+gem 'jquery-rails'
+# Use Haml for ERB
+gem 'haml-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'mini_racer', platforms: :ruby
-# Use CoffeeScript for .coffee assets and views
-# gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 gem 'redis-rails'
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'jquery-rails'
-gem 'haml-rails'
-
-# group :test do
-#   gem 'capybara'
-#   gem 'selenium-webdriver'
-#   gem 'email_spec'
-#   gem 'timecop'
-#   gem 'chromedriver-helper'
-#   Coverage display
-#   gem 'simplecov', require: false
-# end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -68,49 +56,22 @@ group :development do
   gem 'spring-commands-rspec'
   # For code analysis and autocomplete
   gem 'solargraph'
-  # Automatically test when code changes
-  # gem 'guard'
-  # gem 'guard-livereload'
-  # gem 'guard-rspec', require: false
   # Comment the column name in the model file
   gem 'annotate'
-  # Check coding rules
-  # gem 'gry'
   gem 'rubocop', '~> 0.87.1', require: false
   gem 'rubocop-rails', require: false
   # Manage environment variables
   gem 'dotenv-rails'
-  # ERD creation
-  # gem 'rails-erd'
-  # N+1 detection
-  # gem 'bullet'
-  # Vulnerability analysis  run: brakeman /path/to/rails/project
-  # gem 'brakeman', require: false
-  # gem vulnerability analysis  run: bundle audit
-  # gem 'bundler-audit'
 end
-
-# group :production, :staging do
-#   gem 'unicorn'
-#   gem 'capistrano', require: false
-#   gem 'capistrano-rails', require: false
-#   gem 'capistrano-rbenv', require: false
-#   gem 'capistrano-bundler', require: false
-#   gem 'ed25519'
-#   gem 'bcrypt_pbkdf'
-#   gem 'slackistrano', require: false
-# end
 
 group :production do
   # Running Rails application on Heroku
   gem 'rails_12factor'
 end
 
-group :development, :production, :test do
-  # Authentication tools
-  gem 'devise'
-  gem 'omniauth-twitter'
-end
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
+
+# Authentication tools
+gem 'devise'
+gem 'omniauth-twitter'
