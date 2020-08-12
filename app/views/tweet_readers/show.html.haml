@@ -1,3 +1,7 @@
 %h1 こんにちは！
 %h2= current_user.username
 %p ユーザー用ページです。
+
+- @client.home_timeline.each.with_index do |tweet|
+  %p= tweet.current_user.username + '[ID:' + current_user.screen_name + ']'
+  %p= tweet.text

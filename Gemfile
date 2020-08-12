@@ -43,6 +43,8 @@ group :development, :test do
   # Clean up the database.
   gem 'database_cleaner-active_record'
   gem 'database_cleaner-redis'
+  # Manage environment variables
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -58,10 +60,10 @@ group :development do
   gem 'solargraph'
   # Comment the column name in the model file
   gem 'annotate'
-  gem 'rubocop', '~> 0.87.1', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
-  # Manage environment variables
-  gem 'dotenv-rails'
+  gem 'rubocop-rspec'
 end
 
 group :production do
@@ -75,3 +77,4 @@ gem 'tzinfo-data'
 # Authentication tools
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'twitter'
