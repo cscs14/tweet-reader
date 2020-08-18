@@ -10,9 +10,11 @@ gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
+gem 'bootstrap-honoka-rails', '~> 4.3.1'
 gem 'sassc-rails'
 # Use JQuery for javascripts
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Use Haml for ERB
 gem 'haml-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -24,10 +26,17 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 gem 'redis-rails'
-# Use ActiveStorage variant
-gem 'mini_magick', '~> 4.8'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data'
+# Manage constants that differ for each environment
+gem 'config'
+# Authentication tools
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,7 +53,7 @@ group :development, :test do
   gem 'database_cleaner-active_record'
   gem 'database_cleaner-redis'
   # Manage environment variables
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :development do
@@ -70,11 +79,3 @@ group :production do
   # Running Rails application on Heroku
   gem 'rails_12factor'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data'
-
-# Authentication tools
-gem 'devise'
-gem 'omniauth-twitter'
-gem 'twitter'
