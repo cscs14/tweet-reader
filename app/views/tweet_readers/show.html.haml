@@ -3,5 +3,5 @@
 %p ユーザー用ページです。
 
 - @client.home_timeline.each.with_index do |tweet|
-  %p= tweet.current_user.username + '[ID:' + current_user.screen_name + ']'
+  %p= tweet.user.name + '[ID:' + tweet.user.screen_name + ']'
   %p= tweet.text
